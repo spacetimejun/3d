@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				margin: 200px auto;
+				position: relative;
+				transform-style: preserve-3d;
+				transform: rotateX(-10deg) rotateY(-30deg);
+				/*perspective: 1000px;
+				perspective-origin: 50% 50%;*/
+				backface-visibility: hidden;
+				animation: go 5s linear infinite ;
+			
+			}
+			@keyframes go{
+				0%{transform: rotateX(-10deg) rotateY(-30deg)}
+				
+				100%{transform: rotateX(-10deg) rotateY(-390deg)}
+			}
+			#font,#back,#top,#bottom,#left,#right{
+				width: 200px;
+				height: 200px;
+				position: absolute;
+				opacity: 0.0;
+			}
+			#font,#back,#top,#bottom,#left,#right:after {
+				content:' ';
+				display:block;
+				width:100%;
+				/*height:7vw; /* vw是移动设计备窗体单位*/*/
+				transform:rotateX(90deg);
+				background-image: radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%); /* radial-gradient 是径向渐变 */
+				}
+			#font{
+				background: pink;
+				transform:  translateZ(0px);
+				animation: go1 1s linear 0s forwards ;
+			}
+			@keyframes go1{
+				from{transform:  translateZ(0px);opacity: 0;}
+				to{transform:  translateZ(200px);opacity: 1;}
+			}
+			
+			#top{
+				background: seagreen;
+				transform:  translateZ(0px);
+				animation: go2 1s linear 3s forwards ;
+			}
+			@keyframes go2{
+				from{transform:  translateZ(0px);opacity: 0;}
+				to{transform:  translateZ(-200px);opacity: 1;}
+			}
+			
+			#bottom{
+				background: gold;
+				transform: rotateY(0deg) translateZ(0px);
+				animation: go3 1s linear 1s forwards ;
+			}
+			@keyframes go3{
+				from{transform: rotateY(0deg) translateZ(0px);opacity: 0;}
+				to{transform: rotateY(-60deg) translateZ(200px);opacity: 1;}
+			}
+			
+			
+			#back{
+				background: darkgrey;
+				transform: rotateY(0deg) translateZ(0px);
+				animation: go4 1s linear 2s forwards ;
+			}
+			@keyframes go4{
+				from{transform: rotateY(0deg) translateZ(0px);opacity: 0;}
+				to{transform: rotateY(-120deg) translateZ(200px);opacity: 1;}
+			}
+			
+			#right{
+				background: cyan;
+				transform: rotateY(0deg) translateZ(0px);
+				animation: go5 1s linear 5s forwards ;
+			}
+			@keyframes go5{
+				from{transform: rotateY(0deg) translateZ(0px);opacity: 0;}
+				to{transform: rotateY(60deg) translateZ(200px);opacity: 1;}
+			}
+			
+			#left{
+				background: indigo;
+				transform: rotateY(0deg) translateZ(0px);
+				animation: go6 1s linear 4s forwards ;
+			}
+			@keyframes go6{
+				from{transform: rotateY(0deg) translateZ(0px);opacity: 0;}
+				to{transform: rotateY(120deg) translateZ(200px);opacity: 1;}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="font">
+				1
+			</div>
+			<div id="back">
+				2
+			</div>
+			<div id="top">
+				3
+			</div>
+			<div id="bottom">
+				4
+			</div>
+			<div id="left">
+				5
+			</div>
+			<div id="right">
+				6
+			</div>
+			
+		</div>
+	</body>
+</html>
